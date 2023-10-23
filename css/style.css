@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+/*-----------TITLE-t----------*/
+.title-mobile{
+    display: none;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 8em;
+}
+
+.title1 {
+    color: #e42a2a;
+}
+.title2 {
+    color: #1100ff;
+}
+
+/*-----------------BOXES------------------*/
+.container{
+    width: 100%;
+    background-color: #105871;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-container{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .4s ease all;
+}
+
+.box-container.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    width: 250px;
+    height: 250px;
+}
+.bi-circle{
+    display: block;
+    font-size: 7em;
+    opacity: 0;
+    transform: scale(.9) translateX(100px);
+    transition: .3s ease all;
+}
+.bi-x{
+    display: block;
+    font-size: 12em;
+    opacity: 0;
+    transform: scale(.9) translateX(100px);
+    transition: .3s ease all;
+}
+
+.visible{
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+/*---------------------CARTEL GANO---------------*/
+
+.win-container{
+    position: absolute;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    z-index: 100;
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease all;
+}
+.win-container.active{
+    transform: scale(1);
+}
+.win-container h1{
+    color: #fff;
+    font-size: 3em;
+    padding: .5em;
+    border-radius: 18px;
+
+}
+/*---------------------MENU---------------------*/
+
+.menu{
+    background-color: #0B3948;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    gap: 2em;
+    margin-bottom: 1em;
+    width: 40vw;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    z-index: 100;
+}
+
+
+.buttons{
+    display: flex;
+    gap: 6em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(300px);
+    opacity: 0;
+    transition: .4s ease all;
+}
+
+.buttons.visible{
+    opacity: 1;
+    transform: translate(0);
+}
+.btn-start, .btn-restart{
+    width: max-content;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: .3s ease all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease all;
+}
+.btn-start i, .btn-restart i{
+    display: flex;
+    font-size: 10em;
+    color: #fff;
+    transition: .4s ease all;
+}
+
+.btn-start{
+    padding: 0;
+}
+.btn-start i{
+    font-size: 12em;
+}
+.btn-restart:hover{
+    border-radius: 10px;
+    background-color: #105871;
+    color: #fff;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+.btn-restart i.active{
+    transform: rotate(360deg);
+}
+.btn-start:hover{
+    border-radius: 10px;
+    background-color: #0B3948;
+    color: #fff;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.players{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+.players p{
+    color: #fff;
+    font-size: 2em;
+    padding: .5em;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.menu h2{
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    transition: .4s ease all;
+}
+
+.menu h2.invisible{
+    opacity: 0;
+    transform: translateX(-200px);
+}
+/*REDES*/
+.redes {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.redes i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #0B3948;
+    background-color: #ccc;
+    border-radius: 50%;
+    padding: .5em;
+    transition: .3s ease all;
+}
+.redes i:hover{
+    color: #fff;
+    background-color: #105871;
+}
+.buttons-mobile{
+    display: none;
+}
+.disable{
+    display: none;
+}
