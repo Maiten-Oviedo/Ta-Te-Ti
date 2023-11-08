@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    /*Animaciones de Entrada*/
-
 
     /*FUNCIONAMIENTO DEL GRID*/ 
 
@@ -93,66 +91,67 @@ document.addEventListener("DOMContentLoaded", function() {
 
         boxes.forEach((e)=>{
             e.style.cursor = "pointer";
+            e.style.outline = "none";
             e.addEventListener("click", ()=>{
-            x = e.querySelector(".bi-x");
-            circle = e.querySelector(".bi-circle");
-            
-            if(x || circle){   
-            } else if(player1) {
-                e.innerHTML = `
-                <i class="bi bi-x">
-                `;
+                x = e.querySelector(".bi-x");
+                circle = e.querySelector(".bi-circle");
+                
+                if(x || circle){   
+                } else if(player1) {
+                    e.innerHTML = `
+                    <i class="bi bi-x">
+                    `;
 
-                players.innerHTML = "";
-                players.innerHTML = `
-                <p class="jugador1">Jugador Dos</p>
-                `;
-                players.querySelector(".jugador1").style.backgroundColor = "blue";
-                players.querySelector(".jugador1").style.borderRadius = "10px";
-                e.querySelector(".bi-x").style.color = "red";
-                player1 = false;
-                colorsArray[boxesArray.indexOf(e)] = "Uno";
-                setTimeout(() => {
-                    e.querySelector(".bi-x").classList.add("visible");    
-                }, 10);
-            } else{
-                e.innerHTML = `
-                <i class="bi bi-circle">
-                `;
-                players.innerHTML = "";
-                players.innerHTML = `
-                <p class="jugador2">Jugador Uno</p>
-                `;
-                players.querySelector(".jugador2").style.backgroundColor = "red";
-                players.querySelector(".jugador2").style.borderRadius = "10px";
-                e.querySelector(".bi-circle").style.color = "blue";
-                player1 = true;
-                colorsArray[boxesArray.indexOf(e)] = "Dos";
-                setTimeout(() => {
-                    e.querySelector(".bi-circle").classList.add("visible");    
-                }, 10);
-            }
-            setTimeout(() => {
-                if (colorsArray[0] == colorsArray[1] && colorsArray[1] == colorsArray[2]) {
-                    gameWon(colorsArray[0]);
-                } else if(colorsArray[0] == colorsArray[4] && colorsArray[4] == colorsArray[8]){
-                    gameWon(colorsArray[0]);
-                } else if(colorsArray[0] == colorsArray[3] && colorsArray[3] == colorsArray[6]){
-                    gameWon(colorsArray[0]);
-                } else if(colorsArray[1] == colorsArray[4] && colorsArray[4] == colorsArray[7]){
-                    gameWon(colorsArray[1]);
-                } else if(colorsArray[2] == colorsArray[5] && colorsArray[5] == colorsArray[8]){
-                    gameWon(colorsArray[2]);
-                } else if(colorsArray[2] == colorsArray[4] && colorsArray[4] == colorsArray[6]){
-                    gameWon(colorsArray[2]);
-                } else if(colorsArray[1] == colorsArray[4] && colorsArray[4] == colorsArray[7]){
-                    gameWon(colorsArray[1]);
-                } else if(colorsArray[3] == colorsArray[4] && colorsArray[4] == colorsArray[5]){
-                    gameWon(colorsArray[3]);
-                } else if(colorsArray[6] == colorsArray[7] && colorsArray[7] == colorsArray[8]){
-                    gameWon(colorsArray[6]);
+                    players.innerHTML = "";
+                    players.innerHTML = `
+                    <p class="jugador1">Jugador Dos</p>
+                    `;
+                    players.querySelector(".jugador1").style.backgroundColor = "blue";
+                    players.querySelector(".jugador1").style.borderRadius = "10px";
+                    e.querySelector(".bi-x").style.color = "red";
+                    player1 = false;
+                    colorsArray[boxesArray.indexOf(e)] = "Uno";
+                    setTimeout(() => {
+                        e.querySelector(".bi-x").classList.add("visible");    
+                    }, 10);
+                } else{
+                    e.innerHTML = `
+                    <i class="bi bi-circle">
+                    `;
+                    players.innerHTML = "";
+                    players.innerHTML = `
+                    <p class="jugador2">Jugador Uno</p>
+                    `;
+                    players.querySelector(".jugador2").style.backgroundColor = "red";
+                    players.querySelector(".jugador2").style.borderRadius = "10px";
+                    e.querySelector(".bi-circle").style.color = "blue";
+                    player1 = true;
+                    colorsArray[boxesArray.indexOf(e)] = "Dos";
+                    setTimeout(() => {
+                        e.querySelector(".bi-circle").classList.add("visible");    
+                    }, 10);
                 }
-            }, 1);
+                setTimeout(() => {
+                    if (colorsArray[0] == colorsArray[1] && colorsArray[1] == colorsArray[2]) {
+                        gameWon(colorsArray[0]);
+                    } else if(colorsArray[0] == colorsArray[4] && colorsArray[4] == colorsArray[8]){
+                        gameWon(colorsArray[0]);
+                    } else if(colorsArray[0] == colorsArray[3] && colorsArray[3] == colorsArray[6]){
+                        gameWon(colorsArray[0]);
+                    } else if(colorsArray[1] == colorsArray[4] && colorsArray[4] == colorsArray[7]){
+                        gameWon(colorsArray[1]);
+                    } else if(colorsArray[2] == colorsArray[5] && colorsArray[5] == colorsArray[8]){
+                        gameWon(colorsArray[2]);
+                    } else if(colorsArray[2] == colorsArray[4] && colorsArray[4] == colorsArray[6]){
+                        gameWon(colorsArray[2]);
+                    } else if(colorsArray[1] == colorsArray[4] && colorsArray[4] == colorsArray[7]){
+                        gameWon(colorsArray[1]);
+                    } else if(colorsArray[3] == colorsArray[4] && colorsArray[4] == colorsArray[5]){
+                        gameWon(colorsArray[3]);
+                    } else if(colorsArray[6] == colorsArray[7] && colorsArray[7] == colorsArray[8]){
+                        gameWon(colorsArray[6]);
+                    }
+                }, 1);
             
             });
         });

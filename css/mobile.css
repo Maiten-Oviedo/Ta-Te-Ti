@@ -2,6 +2,10 @@
 
 @media screen and (width < 1130px){
 
+    html{
+        overflow-x: hidden;
+        height: 100%;
+    }
     body {
         flex-direction: column;
         justify-content: space-between;
